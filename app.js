@@ -4,9 +4,12 @@ function titleCase(str) {
 }
 
 
+var mainWrapper = document.getElementById('mainWrapper');
+
 var app = new Vue({
 	el: "#root",
 	data: {
+		body: mainWrapper,
 		message: "hello world",
 		country: "",
 		city: "",
@@ -14,7 +17,8 @@ var app = new Vue({
 		latitude: "",
 		longitude: "",
 		temperature: "",
-		tempScale: "C"
+		tempScale: "C",
+		backgroundImage: ""
 	},
 
 	mounted() {
@@ -30,15 +34,28 @@ var app = new Vue({
 		        axios.get(`https://fcc-weather-api.glitch.me/api/current?lat=${this.app.latitude}&lon=${this.app.longitude}`)
 		            .then(function(response) {
 		                console.log(response);
+
 		                this.app.weather = titleCase(response.data.weather[0].description);
+		                this.app.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + response.data.weather[0].main+"')";
 		                this.app.temperature = response.data.main.temp;
+		         
+		                console.log(this.app.backgroundImage);
+		                this.app.body.style.backgroundImage = this.app.backgroundImage;
+
 		            });
+
+
 		    });
+
+	},
+
+	created() {
+		this.body.style.backgroundImage = this.backgroundImage;
+
 	},
 
 	methods: {
 		toggleTempScale() {
-			console.log('You clicked on ' + this.tempScale);
 			if (this.tempScale == "C") {
 				this.temperature = parseFloat(((this.temperature * 1.8) + 32).toFixed(2));
 				this.tempScale = "F";

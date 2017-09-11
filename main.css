@@ -1,0 +1,24 @@
+body {
+	background-color: #2F92B4;
+}
+
+#root {
+	background-color: rgba(5, 99, 135, 0.35);
+	border-radius: 5px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.masthead {
+	margin-top: 4rem;
+	background-color: rgba(5, 99, 135, 0.25);
+	border-radius: 5px;
+}
+
+.site-wrapper {
+	background-repeat: repeat-y;
+   	background-position: center;
+	background-size: cover;
+
+}
+

@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="chickenweather.png"/>
 
-    <title>Cover Template for Bootstrap</title>
+    <title>Weather Vane</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+
+    <!--My own styles-->
+    <link rel="stylesheet" href="main.css">
+
   </head>
 
   <body>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" id="mainWrapper"> 
 
       <div class="site-wrapper-inner">
 
@@ -27,15 +31,16 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="pull-left">Free Code Camp</h3>
+            <img src="chickenweather.svg" id="chicken" alt="Weather vane">
+              <h3 class="pull-left">Weather Vane</h3>
             </div>
           </div>
 
           <div id="root" class="inner cover">
-            <h1 class="cover-heading">Weather App</h1>
-            <p class="lead">Weather in: {{city}}, {{country}}</p>
+            <h1 class="cover-heading">Current weather in</h1>
+            <p class="lead">{{city}}, {{country}}</p>
             
-            <p class="lead" v-show="weather">{{weather}}, with a temperature of {{temperature}} ° <a href="#" @click="toggleTempScale">{{tempScale}}</a></p>
+            <p class="lead" v-show="weather">{{weather}}, with a temperature of {{temperature}} <a href="#" @click="toggleTempScale" style="font-size: 1.7rem">°{{tempScale}}</a></p>
           </div>
 
         </div>
