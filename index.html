@@ -35,13 +35,7 @@
             <h1 class="cover-heading">Weather App</h1>
             <p class="lead">Weather in: {{city}}, {{country}}</p>
             
-            <p class="lead" v-show="weather">{{weather}}, with a temperature of {{temperature}} ° <a href="#" @click="toFahrenheit">C</a></p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
+            <p class="lead" v-show="weather">{{weather}}, with a temperature of {{temperature}} ° <a href="#" @click="toggleTempScale">{{tempScale}}</a></p>
           </div>
 
         </div>
