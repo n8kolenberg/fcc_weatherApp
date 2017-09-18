@@ -1,24 +1,28 @@
 body {
 	background-color: #2F92B4;
+	background-repeat: no-repeat;
+   	background-position: center;
+   	background-attachment: fixed;
+	background-size: cover;
+}
+
+
+.hero {
+	background-color: rgba(0, 210, 178, 0.50);
+}
+
+
+.hero .title, .hero .subtitle {
+	color: whitesmoke;
+}
+
+
+.tile > .is-child{
+	background-color: rgba(255, 255, 255, 0.75); 
 }
 
 #root {
 	background-color: rgba(5, 99, 135, 0.35);
-	border-radius: 5px;
-	padding-bottom: 10px;
-	padding-top: 10px;
 }
 
-.masthead {
-	margin-top: 4rem;
-	background-color: rgba(5, 99, 135, 0.25);
-	border-radius: 5px;
-}
-
-.site-wrapper {
-	background-repeat: repeat-y;
-   	background-position: center;
-	background-size: cover;
-
-}
 

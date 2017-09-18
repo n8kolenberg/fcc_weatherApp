@@ -11,43 +11,90 @@
     <title>Weather Vane</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+    <!-- <link href="http://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet"> -->
+
+    <!--Bulma CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--My own styles-->
     <link rel="stylesheet" href="main.css">
 
   </head>
 
-  <body>
+  <body id="mainWrapper">
 
-    <div class="site-wrapper" id="mainWrapper"> 
+    <div id="root">
 
-      <div class="site-wrapper-inner">
+      <section class="hero is-primary is-bold is-small">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <img src="chickenweather.svg" id="chicken" alt="Weather vane"/>         
+            <h1 class="title">Weather Vane</h1>
+            <h1 class="subtitle">What's the weather like in your location?</h1>
+          </div>
+        </div>
+      </section>
 
-        <div class="cover-container">
 
-          <div class="masthead clearfix">
-            <div class="inner">
-            <img src="chickenweather.svg" id="chicken" alt="Weather vane">
-              <h3 class="pull-left">Weather Vane</h3>
-            </div>
+      <section class="section is-medium">
+
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Your location:</p>
+              <p class="subtitle">{{city}}, {{country}}</p>
+              <div class="content">
+                <p>Today's temperature will be a minimum of {{minTemp}}° {{tempScale}} and a maximum of {{maxTemp}}° {{tempScale}}</p>
+              </div>
+            </article>
           </div>
 
-          <div id="root" class="inner cover">
-            <h1 class="cover-heading">Current weather in</h1>
-            <p class="lead">{{city}}, {{country}}</p>
-            
-            <p class="lead" v-show="weather">{{weather}}, with a temperature of {{temperature}} <a href="#" @click="toggleTempScale" style="font-size: 1.7rem">°{{tempScale}}</a></p>
+          <div class="tile is-parent is-6">
+            <article class="tile is-child box">
+              <p class="title">Current Weather</p>
+              <p class="subtitle">{{weather}}, with a temperature of {{temperature}}° {{tempScale}}
+              </p>
+              <div class="content">
+                <p>Change the temperature scale here:
+                  <a href="#" @click="toggleTempScale" class="button is-primary is-medium">°{{tempScale}}</a>
+              </p>
+              </div>
+            </article>
           </div>
 
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Icon to come here?</p>
+              <p class="subtitle">Subtitle</p>
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut.</p>
+              </div>
+            </article>
+          </div>
         </div>
 
-      </div>
+      </section>
 
-    </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Weather Vane</strong> by <a href="https://www.linkedin.com/in/nathaniel-kolenberg-3475b714">N8 Kolenberg</a>
+            </p>
+            <p>
+              <a class="icon" href="https://github.com/n8kolenberg">
+                <i class="fa fa-github"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+  </div>
+
 
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
