@@ -21,7 +21,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--My own styles-->
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.css">
 
   </head>
 
@@ -55,17 +57,19 @@
           <div class="tile is-parent">
             <article class="tile is-child box">
               <p class="title">Your location:</p>
-              <p class="subtitle">{{city}}, {{country}}</p>
+              <p class="subtitle" v-show="city">{{city}}</p>
+              <p class="subtitle">{{country}}</p>
               <div class="content">
                 <p>Today's temperature will be a minimum of {{minTemp}}° {{tempScale}} and a maximum of {{maxTemp}}° {{tempScale}}</p>
+                <p>The humidity level is at {{humidity}}%</p>
               </div>
             </article>
           </div>
 
           <div class="tile is-parent is-6 has-text-centered">
             <article class="tile is-child box">
-              <p class="title ">Current Weather</p>
-              <p class="subtitle">{{weather}}, with a temperature of {{temperature}}° {{tempScale}}
+              <p class="title">Current Weather</p>
+              <p class="title">{{weather}}, with a temperature of {{temperature}}° {{tempScale}}
               </p>
               <div class="content">
                 <p>Change the temperature scale here:
@@ -77,10 +81,10 @@
 
           <div class="tile is-parent">
             <article class="tile is-child box">
-              <p class="title">Icon to come here?</p>
-              <p class="subtitle">Subtitle</p>
+              <p class="title"></p>
+              <p class="subtitle has-text-centered" style="margin-top: 40px;"><i v-bind:class="weatherIcon" style="font-size: 600%; color: indianred;"></i></p>
               <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut.</p>
+                
               </div>
             </article>
           </div>
@@ -88,20 +92,6 @@
 
       </section>
 
-      <!-- <footer class="footer">
-        <div class="container ">
-          <div class="content has-text-centered">
-            <p>
-              <strong>Weather Vane</strong> by <a href="https://www.linkedin.com/in/nathaniel-kolenberg-3475b714">N8 Kolenberg</a>
-            </p>
-            <p>
-              <a class="icon" href="https://github.com/n8kolenberg">
-                <i class="fa fa-github"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer> -->
   </div>
 
 

@@ -1,0 +1,31 @@
+body {
+	background-repeat: no-repeat;
+   	background-position: center;
+   	background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+}
+
+
+.hero {
+	background-color: rgba(63, 85, 120, 0.8);
+}
+
+.hero .title, .hero .subtitle {
+	color: whitesmoke;
+}
+
+
+.column > .title {
+	padding-top: 10px;
+}
+
+.tile > .is-child{
+	background-color: rgba(255, 255, 255, 0.80); 
+}
+
+#root {
+	background-color: rgba(18, 28, 43, 0.45);
+	padding-bottom: 4%;
+}
+
