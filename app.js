@@ -42,7 +42,7 @@ var app = new Vue({
 
 
 				//Request to get the weather data
-		        axios.get(`http://api.openweathermap.org/data/2.5/find?lat=${this.app.latitude}&lon=${this.app.longitude}&units=metric&APPID=70c6cab3644a8c0121ec7f04c30ffc9c`)
+		        axios.get(`https://api.openweathermap.org/data/2.5/find?lat=${this.app.latitude}&lon=${this.app.longitude}&units=metric&APPID=70c6cab3644a8c0121ec7f04c30ffc9c`)
 		            .then(function(response) {
 		                // console.log("Weather data: ");
 		                // console.log(response);
